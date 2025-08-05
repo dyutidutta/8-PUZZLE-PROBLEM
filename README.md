@@ -5,11 +5,11 @@
 
 The **8-Puzzle Problem** is a classic problem in artificial intelligence and graph theory. It consists of a 3x3 grid with tiles numbered 1 through 8 and one empty space (represented as `0`). The goal is to move the tiles into the correct position by sliding them one at a time into the empty space, ultimately reaching a predefined goal state.
 
-## Objectives
+## ObjectiveS
 
-- Implement **Breadth-First Search (BFS)** to find the shortest path to the solution.
-- Implement **Depth-First Search (DFS)** to explore a possible solution path.
-- Use appropriate data structures for state representation and tracking visited states.
+- Implement **Breadth-First Search (BFS)** to check if a solution exists by exploring states level by level.
+- Implement **Depth-First Search (DFS)** to determine if the goal state can be reached via depth exploration.
+
 
 ---
 
