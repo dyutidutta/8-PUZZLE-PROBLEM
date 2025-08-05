@@ -1,16 +1,11 @@
 #include <iostream>
 #include <vector>
 #include <queue>
-#include <set>
+#include <unordered_set>
 #include <list>
 using namespace std;
 
 using Matrix = vector<vector<int>>;
-
-bool isSame(Matrix x, Matrix y)
-{
-    return x == y;
-}
 
 list<Matrix> genmove(Matrix state)
 {
@@ -68,17 +63,17 @@ string matrixToString(Matrix mat)
 void bfs(Matrix prob, Matrix sol)
 {
     queue<Matrix> q;
-    set<string> visited;
+    unordered_set<string> closed;
 
     q.push(prob);
-    visited.insert(matrixToString(prob));
+    closed.insert(matrixToString(prob));
 
     while (!q.empty())
     {
         Matrix A = q.front();
         q.pop();
 
-        if (isSame(A, sol))
+        if (A == sol)
         {
             cout << "Success!" << endl;
             return;
@@ -87,10 +82,10 @@ void bfs(Matrix prob, Matrix sol)
         list<Matrix> states = genmove(A);
         for (auto state : states)
         {
-            string rep = matrixToString(state);
-            if (visited.find(rep) == visited.end())
+            string str = matrixToString(state);
+            if (closed.find(str) == closed.end())
             {
-                visited.insert(rep);
+                closed.insert(str);
                 q.push(state);
             }
         }
