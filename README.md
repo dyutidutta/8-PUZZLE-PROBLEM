@@ -206,10 +206,10 @@ Success!
 
 ## Files
 
-| Filename        | Description                                  |
-|-----------------|----------------------------------------------|
-| `bfs.cpp`       | BFS-based 8-puzzle solver                    |
-| `dfs.cpp`       | DFS-based 8-puzzle solver                    |
-| `README.md`     | Explanation and documentation                |
+| Filename                 | Description                                  |
+|--------------------------|----------------------------------------------|
+| `8_PUZZLE_BFS.cpp`       | BFS-based 8-puzzle solver                    |
+| `8_PUZZLE_DFS.cpp`       | DFS-based 8-puzzle solver                    |
+| `README.md`              | Explanation and documentation                |
 
 
