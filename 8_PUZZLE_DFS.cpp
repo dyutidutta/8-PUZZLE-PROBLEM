@@ -1,16 +1,11 @@
 #include <iostream>
 #include <vector>
+#include <unordered_set>
 #include <stack>
-#include <set>
 #include <list>
 using namespace std;
 
 using Matrix = vector<vector<int>>;
-
-bool isSame(Matrix x, Matrix y)
-{
-    return x == y;
-}
 
 list<Matrix> genmove(Matrix state)
 {
@@ -68,17 +63,17 @@ string matrixToString(Matrix mat)
 void dfs(Matrix prob, Matrix sol)
 {
     stack<Matrix> s;
-    set<string> visited;
+    unordered_set<string> closed;
 
     s.push(prob);
-    visited.insert(matrixToString(prob));
+    closed.insert(matrixToString(prob));
 
     while (!s.empty())
     {
         Matrix A = s.top();
         s.pop();
 
-        if (isSame(A, sol))
+        if (A == sol)
         {
             cout << "Success!" << endl;
             return;
@@ -87,10 +82,10 @@ void dfs(Matrix prob, Matrix sol)
         list<Matrix> states = genmove(A);
         for (auto state : states)
         {
-            string rep = matrixToString(state);
-            if (visited.find(rep) == visited.end())
+            string str = matrixToString(state);
+            if (closed.find(str) == closed.end())
             {
-                visited.insert(rep);
+                closed.insert(str);
                 s.push(state);
             }
         }
@@ -104,7 +99,7 @@ int main()
     Matrix prob = {
         {1, 2, 3},
         {4, 5, 6},
-        {7, 0, 8}};
+        {0, 7, 8}};
 
     Matrix sol = {
         {1, 2, 3},
