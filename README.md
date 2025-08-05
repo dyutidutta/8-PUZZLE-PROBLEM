@@ -166,8 +166,8 @@ Converts a 3x3 matrix into a flat string for hashing and lookup in `unordered_se
 
 ```
 1 2 3
-4 5 6
-8 7 0
+4 0 6
+7 5 8
 ```
 
 **Goal (Solution) State:**
@@ -179,7 +179,7 @@ Converts a 3x3 matrix into a flat string for hashing and lookup in `unordered_se
 ```
 ### BFS Output:
 ```
-Failed!
+Success!
 ```
 
 **Initial (Start) State:**
